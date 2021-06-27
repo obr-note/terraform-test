@@ -140,7 +140,7 @@ resource "aws_codepipeline" "example" {
 
       configuration = {
         Owner = "obr-note"
-        Repo = "your-repository"
+        Repo = "terraform-test"
         Branch = "master"
         PollForSourceChanges = false
       }
@@ -211,7 +211,7 @@ provider "github" {
 }
 
 resource "github_repository_webhook" "example" {
-  repository = "your-repository"
+  repository = "terraform-test"
 
   configuration {
     url = aws_codepipeline_webhook.example.url
