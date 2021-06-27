@@ -112,7 +112,7 @@ module "codepipeline_role" {
 }
 
 resource "aws_s3_bucket" "artifact" {
-  bucket = "artifact-pragmatic-terraform"
+  bucket = "artifact-pragmatic-terraform-obob"
 
   lifecycle_rule {
     enabled = true
@@ -143,6 +143,7 @@ resource "aws_codepipeline" "example" {
         Repo = "terraform-test"
         Branch = "master"
         PollForSourceChanges = false
+        OAuthToken = ""
       }
     }
   }
